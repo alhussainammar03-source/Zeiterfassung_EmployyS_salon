@@ -1,0 +1,33 @@
+[1mdiff --git a/repositories/EmployeeRepository.php b/repositories/EmployeeRepository.php[m
+[1mindex 0089c30..4aad4f1 100644[m
+[1m--- a/repositories/EmployeeRepository.php[m
+[1m+++ b/repositories/EmployeeRepository.php[m
+[36m@@ -1,10 +1,5 @@[m
+[31m-[m
+[31m-[m
+[31m-[m
+ <?php[m
+[31m-[m
+ require_once __DIR__ . '/../models/Employee.php';[m
+[31m-[m
+ class EmployeeRepository[m
+ {[m
+     private PDO $pdo;[m
+[36m@@ -56,7 +51,7 @@[m [mclass EmployeeRepository[m
+ [m
+     /**[m
+      * Aktive Mitarbeiter (Rolle "mitarbeiter") inkl. Sollstunden,[m
+[31m-     * für die Admin-Zeiterfassungs-Statistik.[m
+[32m+[m[32m     * fÃ¼r die Admin-Zeiterfassungs-Statistik.[m
+      */[m
+     public function getAllActiveMitarbeiterMitSollstunden(): array[m
+     {[m
+[36m@@ -301,7 +296,7 @@[m [mclass EmployeeRepository[m
+     }[m
+ [m
+     /**[m
+[31m-     * Aktualisiert die vom Mitarbeiter selbst änderbaren Felder:[m
+[32m+[m[32m     * Aktualisiert die vom Mitarbeiter selbst Ã¤nderbaren Felder:[m
+      * Name, Geschlecht, Telefon, Adresse. (Rolle/Status/Gehalt bleiben[m
+      * dem Admin vorbehalten.)[m
+      */[m
