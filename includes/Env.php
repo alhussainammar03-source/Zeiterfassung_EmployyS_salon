@@ -3,14 +3,13 @@
 declare(strict_types=1);
 
 /**
- * Einfacher .env-Datei-Loader (ohne Composer-Abhängigkeit).
+ * Environment Loader
  *
- * Liest KEY=WERT-Zeilen aus einer .env-Datei und macht sie über
- * Env::get() verfügbar. Zeilen mit # am Anfang gelten als Kommentar.
+ * محلياً:
+ * يقرأ القيم من ملف .env
  *
- * Nutzung:
- *   Env::load(__DIR__ . '/../.env');
- *   $wert = Env::get('DB_HOST', 'localhost'); // zweites Argument = Fallback
+ * على Railway:
+ * يقرأ Environment Variables مباشرة
  */
 class Env
 {
@@ -23,46 +22,77 @@ class Env
             return;
         }
 
-        if (!file_exists($pfad)) {
-            throw new RuntimeException(
-                "Die Datei .env wurde nicht gefunden unter: {$pfad}\n"
-                    . "Kopiere .env.example zu .env und trage deine echten Zugangsdaten ein."
+        /*
+         * إذا كان ملف .env موجوداً
+         * نقرأه، وهذا مفيد على XAMPP
+         */
+        if (file_exists($pfad)) {
+
+            $zeilen = file(
+                $pfad,
+                FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES
             );
+
+            foreach ($zeilen as $zeile) {
+
+                $zeile = trim($zeile);
+
+                if ($zeile === '' || str_starts_with($zeile, '#')) {
+                    continue;
+                }
+
+                if (!str_contains($zeile, '=')) {
+                    continue;
+                }
+
+                [$schluessel, $wert] = explode('=', $zeile, 2);
+
+                $schluessel = trim($schluessel);
+                $wert = trim($wert);
+
+                // إزالة " أو '
+                if (
+                    (str_starts_with($wert, '"') && str_ends_with($wert, '"')) ||
+                    (str_starts_with($wert, "'") && str_ends_with($wert, "'"))
+                ) {
+                    $wert = substr($wert, 1, -1);
+                }
+
+                self::$werte[$schluessel] = $wert;
+            }
         }
 
-        $zeilen = file($pfad, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-
-        foreach ($zeilen as $zeile) {
-            $zeile = trim($zeile);
-
-            if ($zeile === '' || str_starts_with($zeile, '#')) {
-                continue;
-            }
-
-            if (!str_contains($zeile, '=')) {
-                continue;
-            }
-
-            [$schluessel, $wert] = explode('=', $zeile, 2);
-            $schluessel = trim($schluessel);
-            $wert = trim($wert);
-
-            // Anführungszeichen um den Wert entfernen, falls vorhanden
-            if (
-                (str_starts_with($wert, '"') && str_ends_with($wert, '"')) ||
-                (str_starts_with($wert, "'") && str_ends_with($wert, "'"))
-            ) {
-                $wert = substr($wert, 1, -1);
-            }
-
-            self::$werte[$schluessel] = $wert;
-        }
-
+        /*
+         * إذا لم يوجد .env لا نرمي Error
+         * لأن Railway يوفر Environment Variables
+         */
         self::$geladen = true;
     }
 
-    public static function get(string $schluessel, ?string $fallback = null): ?string
-    {
-        return self::$werte[$schluessel] ?? $fallback;
+    public static function get(
+        string $schluessel,
+        ?string $fallback = null
+    ): ?string {
+
+        /*
+         * أولاً: Railway / Server Environment Variable
+         */
+        $serverWert = getenv($schluessel);
+
+        if ($serverWert !== false && $serverWert !== '') {
+            return $serverWert;
+        }
+
+        /*
+         * ثانياً: قيمة .env المحلية
+         */
+        if (isset(self::$werte[$schluessel])) {
+            return self::$werte[$schluessel];
+        }
+
+        /*
+         * ثالثاً: fallback
+         */
+        return $fallback;
     }
 }
