@@ -1,10 +1,5 @@
-
-
-
 <?php
-
 require_once __DIR__ . '/../models/Employee.php';
-
 class EmployeeRepository
 {
     private PDO $pdo;
@@ -56,7 +51,7 @@ class EmployeeRepository
 
     /**
      * Aktive Mitarbeiter (Rolle "mitarbeiter") inkl. Sollstunden,
-     * für die Admin-Zeiterfassungs-Statistik.
+     * fÃ¼r die Admin-Zeiterfassungs-Statistik.
      */
     public function getAllActiveMitarbeiterMitSollstunden(): array
     {
@@ -301,7 +296,7 @@ class EmployeeRepository
     }
 
     /**
-     * Aktualisiert die vom Mitarbeiter selbst änderbaren Felder:
+     * Aktualisiert die vom Mitarbeiter selbst Ã¤nderbaren Felder:
      * Name, Geschlecht, Telefon, Adresse. (Rolle/Status/Gehalt bleiben
      * dem Admin vorbehalten.)
      */
