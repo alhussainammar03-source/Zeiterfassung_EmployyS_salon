@@ -1,0 +1,198 @@
+/* ==========================================================================
+   Bella Beauty – Über uns
+   Nutzt die Design-Tokens aus home_page.css
+   ========================================================================== */
+
+.about-hero {
+    margin-top: 80px;
+    padding: 60px var(--space-mobile) 40px;
+    background: linear-gradient(135deg, #ffffff 0%, var(--bella-primary-light) 100%);
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 32px;
+    margin: 0 0 12px 0;
+}
+
+.about-hero p {
+    color: var(--bella-on-surface-variant);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-story {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px var(--space-mobile);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+@media (min-width: 800px) {
+    .about-story {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.about-story__image {
+    width: 100%;
+    height: 280px;
+    border-radius: var(--radius-xl);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.08);
+}
+
+.about-story__text h2 {
+    font-size: 26px;
+    margin: 0 0 14px 0;
+}
+
+.about-story__text p {
+    color: var(--bella-on-surface-variant);
+    line-height: 1.7;
+    margin: 0 0 12px 0;
+}
+
+.about-stats {
+    background: var(--bella-surface-container-low, #f0f3ff);
+    padding: 40px var(--space-mobile);
+}
+
+.about-stats__grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    text-align: center;
+}
+
+@media (min-width: 700px) {
+    .about-stats__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.about-stat__value {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--bella-primary);
+}
+
+.about-stat__label {
+    font-size: 13px;
+    color: var(--bella-on-surface-variant);
+    margin-top: 4px;
+}
+
+.about-values {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px var(--space-mobile);
+    text-align: center;
+}
+
+.about-values h2 {
+    font-size: 26px;
+    margin: 0 0 30px 0;
+}
+
+.about-values__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: left;
+}
+
+@media (min-width: 700px) {
+    .about-values__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.about-value-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 22px;
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+}
+
+.about-value-card__icon {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.about-value-card h3 {
+    margin: 0 0 6px 0;
+    font-size: 16px;
+}
+
+.about-value-card p {
+    margin: 0;
+    color: var(--bella-on-surface-variant);
+    font-size: 14px;
+}
+
+.about-team {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px var(--space-mobile) 70px;
+    text-align: center;
+}
+
+.about-team h2 {
+    font-size: 26px;
+    margin: 0 0 8px 0;
+}
+
+.about-team > p {
+    color: var(--bella-on-surface-variant);
+    margin: 0 0 30px 0;
+}
+
+.about-team__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+}
+
+.about-team-card {
+    text-align: center;
+}
+
+.about-team-card__photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 12px auto;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--bella-primary-light);
+    box-shadow: 0 4px 14px rgba(43, 33, 56, 0.1);
+}
+
+.about-team-card__photo--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.about-team-card h3 {
+    margin: 0 0 2px 0;
+    font-size: 15px;
+}
+
+.about-team-card span {
+    font-size: 13px;
+    color: var(--bella-primary);
+}
+
+.about-cta {
+    text-align: center;
+    padding-bottom: 20px;
+}

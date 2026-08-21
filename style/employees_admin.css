@@ -1,0 +1,248 @@
+/* ==========================================================================
+   Bella Beauty – Mitarbeiterverwaltung (Admin)
+   ========================================================================== */
+
+.emp-search-form button {
+    background: linear-gradient(135deg, var(--bella-primary, #d63384), var(--bella-primary-dark, #a8296b));
+    color: white;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.emp-add-btn {
+    background: linear-gradient(135deg, var(--bella-primary, #d63384), var(--bella-primary-dark, #a8296b));
+    color: white;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.emp-table-wrapper {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.emp-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.emp-table th {
+    text-align: left;
+    padding: 12px 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--bella-on-surface-variant);
+    background: var(--bella-surface-container-low, #f0f3ff);
+}
+
+.emp-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #f1ecf5;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.emp-table tr:last-child td {
+    border-bottom: none;
+}
+
+.emp-id {
+    color: var(--bella-on-surface-variant);
+    font-size: 13px;
+}
+
+.emp-name {
+    font-weight: 600;
+}
+
+.emp-contact__email {
+    color: var(--bella-primary);
+    font-size: 13px;
+    display: block;
+}
+
+.emp-contact__phone {
+    font-size: 12px;
+    color: var(--bella-on-surface-variant);
+}
+
+.emp-role-badge {
+    background: var(--bella-primary-light, #fce7f3);
+    color: var(--bella-primary-dark, #a8296b);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 999px;
+    display: inline-block;
+}
+
+.emp-status-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.emp-status-dot::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+}
+
+.emp-status-dot--inaktiv::before {
+    background: #ef4444;
+}
+
+.emp-status-dot--inaktiv {
+    color: var(--bella-on-surface-variant);
+}
+
+.emp-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.emp-toolbar__right {
+    display: flex;
+    gap: 10px;
+}
+
+.emp-search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 280px;
+}
+
+.emp-search-form input[type="search"] {
+    flex: 1;
+    min-width: 280px;
+    max-width: 620px;
+    padding: 9px 14px;
+    border: 1px solid var(--bella-outline-variant, #dfbec8);
+    border-radius: 999px;
+    font-size: 14px;
+}
+
+.emp-filter-select {
+    width: auto;
+    flex-shrink: 0;
+    padding: 9px 14px;
+    border: 1px solid var(--bella-outline-variant, #dfbec8);
+    border-radius: 999px;
+    font-size: 13px;
+    background: white;
+}
+
+.emp-export-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: white;
+    border: 1px solid var(--bella-outline-variant, #dfbec8);
+    color: var(--bella-on-surface, #151c27);
+    padding: 9px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.emp-export-btn:hover {
+    background: var(--bella-primary-light, #fce7f3);
+    border-color: var(--bella-primary);
+}
+
+.emp-toggle {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 24px;
+}
+
+.emp-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.emp-toggle__slider {
+    position: absolute;
+    inset: 0;
+    background: #d1d5db;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.emp-toggle__slider::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 3px;
+    top: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.15s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.emp-toggle input:checked + .emp-toggle__slider {
+    background: #22c55e;
+}
+
+.emp-toggle input:checked + .emp-toggle__slider::before {
+    transform: translateX(18px);
+}
+
+.emp-icon-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    background: var(--bella-surface-container-low, #f0f3ff);
+    color: var(--bella-on-surface-variant);
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.emp-icon-btn:hover {
+    background: var(--bella-primary-light, #fce7f3);
+    color: var(--bella-primary);
+}
+
+.emp-icon-btn--delete:hover {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.emp-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}

@@ -1,0 +1,117 @@
+/* ==========================================================================
+   Bella Beauty – Terminwunsch Details (Admin)
+   ========================================================================== */
+
+.twd-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+@media (min-width: 800px) {
+    .twd-layout {
+        grid-template-columns: 1fr 320px;
+    }
+}
+
+.twd-card {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    padding: 24px;
+}
+
+.twd-card h2 {
+    margin: 0 0 18px 0;
+    font-size: 16px;
+}
+
+.twd-info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1ecf5;
+    font-size: 14px;
+}
+
+.twd-info-row:last-child {
+    border-bottom: none;
+}
+
+.twd-info-row span:first-child {
+    color: var(--bella-on-surface-variant);
+}
+
+.twd-info-row span:last-child {
+    font-weight: 600;
+    text-align: right;
+}
+
+.twd-note-box {
+    background: var(--bella-surface-container-low, #f0f3ff);
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 13px;
+    color: var(--bella-on-surface-variant);
+    margin-top: 10px;
+}
+
+.twd-status-form label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--bella-on-surface-variant);
+    margin-bottom: 6px;
+}
+
+.twd-status-form select {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid var(--bella-outline-variant, #dfbec8);
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.twd-status-form button {
+    width: 100%;
+    background: linear-gradient(135deg, var(--bella-primary, #d63384), var(--bella-primary-dark, #a8296b));
+    color: white;
+    border: none;
+    padding: 11px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.twd-current-status {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.twd-current-status--angefragt {
+    background: var(--bella-primary-light, #fce7f3);
+    color: var(--bella-primary-dark, #a8296b);
+}
+
+.twd-current-status--bestaetigt {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.twd-current-status--abgelehnt,
+.twd-current-status--storniert {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.twd-current-status--abgeschlossen {
+    background: #f1f1f4;
+    color: #6b7280;
+}

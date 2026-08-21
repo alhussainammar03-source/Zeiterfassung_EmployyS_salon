@@ -1,0 +1,198 @@
+/* ==========================================================================
+   Bella Beauty – Termin-Slots Verwalten (Admin)
+   ========================================================================== */
+
+.ts-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+@media (min-width: 1000px) {
+    .ts-layout {
+        grid-template-columns: 380px 1fr;
+    }
+}
+
+.ts-form-card {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.ts-form-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    margin: 0 0 16px 0;
+    color: var(--bella-on-surface, #151c27);
+}
+
+.ts-form-card .form-group {
+    margin-bottom: 14px;
+}
+
+.ts-form-card label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--bella-on-surface-variant);
+    margin-bottom: 5px;
+}
+
+.ts-form-card input,
+.ts-form-card select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--bella-outline-variant, #dfbec8);
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.ts-form-card small {
+    display: block;
+    font-size: 11px;
+    color: var(--bella-on-surface-variant);
+    margin-bottom: 12px;
+}
+
+.ts-weekday-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.ts-weekday-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--bella-surface-container-low, #f0f3ff);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ts-submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--bella-primary, #d63384), var(--bella-primary-dark, #a8296b));
+    color: white;
+    border: none;
+    padding: 11px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ts-secondary-block {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid #f1ecf5;
+}
+
+.ts-danger-btn {
+    width: 100%;
+    background: white;
+    border: 1.5px solid #ef4444;
+    color: #ef4444;
+    padding: 10px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ts-list-card {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    overflow: hidden;
+}
+
+.ts-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid #f1ecf5;
+}
+
+.ts-list-header h2 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.ts-list-header select {
+    padding: 7px 12px;
+    border: 1px solid var(--bella-outline-variant, #dfbec8);
+    border-radius: 999px;
+    font-size: 12px;
+    background: white;
+}
+
+.ts-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ts-table th {
+    text-align: left;
+    padding: 12px 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--bella-on-surface-variant);
+    background: var(--bella-surface-container-low, #f0f3ff);
+}
+
+.ts-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #f1ecf5;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.ts-table tr:last-child td {
+    border-bottom: none;
+}
+
+.ts-date strong {
+    display: block;
+    font-size: 13px;
+}
+
+.ts-date span {
+    font-size: 11px;
+    color: var(--bella-on-surface-variant);
+}
+
+.ts-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.ts-badge--frei {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.ts-badge--angefragt {
+    background: var(--bella-primary-light, #fce7f3);
+    color: var(--bella-primary-dark, #a8296b);
+}
+
+.ts-badge--gebucht {
+    background: #fee2e2;
+    color: #991b1b;
+}

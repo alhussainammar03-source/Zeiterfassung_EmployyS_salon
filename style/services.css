@@ -1,0 +1,205 @@
+/* ==========================================================================
+   Bella Beauty – Services-Seite
+   Nutzt dieselben Design-Tokens wie home_page.css
+   ========================================================================== */
+
+.services-page-header {
+    margin-top: 80px;
+    padding: 48px var(--space-mobile) 32px;
+    background: linear-gradient(135deg, #ffffff 0%, var(--bella-primary-light) 100%);
+}
+
+.services-page-header .container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.services-page-header h1 {
+    font-size: 32px;
+    margin: 0 0 8px 0;
+}
+
+.services-page-header p {
+    color: var(--bella-on-surface-variant);
+    margin: 0;
+}
+
+.category-section {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px var(--space-mobile);
+}
+
+.category-section__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--bella-primary);
+    margin: 0 0 20px 0;
+}
+
+.category-section__title::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--bella-primary);
+    display: inline-block;
+}
+
+.service-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+
+.service-item-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.service-item-card__image {
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--bella-primary-light);
+}
+
+.service-item-card__image--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.service-item-card__body {
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.service-item-card__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.service-item-card__top h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.service-item-card__price {
+    color: var(--bella-primary);
+    font-weight: 700;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.service-item-card__desc {
+    color: var(--bella-on-surface-variant);
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0 0 var(--space-md) 0;
+    flex: 1;
+}
+
+.service-item-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.service-item-card__duration {
+    font-size: 13px;
+    color: var(--bella-on-surface-variant);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.service-item-card__book-btn {
+    background: linear-gradient(135deg, var(--bella-primary), var(--bella-primary-dark));
+    color: white;
+    padding: 8px 18px;
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.popular-tag {
+    display: inline-block;
+    background: #fef3c7;
+    color: #92400e;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+/* CTA box, replaces the non-functional newsletter box from the Stitch design */
+.services-cta {
+    max-width: 1280px;
+    margin: 40px auto;
+    padding: 32px var(--space-mobile);
+}
+
+.services-cta__box {
+    background: linear-gradient(135deg, var(--bella-primary), var(--bella-primary-dark));
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    color: white;
+    text-align: center;
+}
+
+.services-cta__box h3 {
+    margin: 0 0 8px 0;
+    font-size: 22px;
+}
+
+.services-cta__box p {
+    margin: 0 0 var(--space-lg) 0;
+    opacity: 0.9;
+}
+
+.services-cta__box .btn-outline {
+    border-color: white;
+    color: white;
+}
+
+.services-cta__box .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+@media (min-width: 640px) {
+    .service-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .services-page-header {
+        padding: 64px var(--space-desktop) 40px;
+    }
+
+    .category-section {
+        padding: 40px var(--space-desktop);
+    }
+
+    .service-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

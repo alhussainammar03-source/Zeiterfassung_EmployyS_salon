@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Bella Beauty – Meine Termine (Mitarbeiter)
+   ========================================================================== */
+
+.ea-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.ea-date-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ea-date-nav a {
+    color: var(--bella-primary);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.ea-date-nav a:hover {
+    background: var(--bella-primary-light);
+}
+
+.ea-date-nav__today {
+    background: var(--bella-primary-light, #fce7f3);
+    color: var(--bella-primary-dark, #a8296b) !important;
+    font-size: 13px !important;
+    font-weight: 600;
+    padding: 6px 14px !important;
+    border-radius: 999px;
+}
+
+.ea-date-nav__label {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--bella-on-surface);
+}
+
+.ea-view-tabs {
+    display: flex;
+    gap: 6px;
+    background: var(--bella-surface-container-low, #f0f3ff);
+    padding: 4px;
+    border-radius: 999px;
+}
+
+.ea-view-tabs a {
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--bella-on-surface-variant);
+}
+
+.ea-view-tabs a.is-active {
+    background: linear-gradient(135deg, var(--bella-primary), var(--bella-primary-dark));
+    color: white;
+}
+
+.ea-list {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    overflow: hidden;
+}
+
+.ea-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 22px;
+    border-bottom: 1px solid #f1ecf5;
+    flex-wrap: wrap;
+}
+
+.ea-row:last-child {
+    border-bottom: none;
+}
+
+.ea-row--past {
+    opacity: 0.7;
+}
+
+.ea-row__time {
+    width: 80px;
+    flex-shrink: 0;
+}
+
+.ea-row__time strong {
+    display: block;
+    font-size: 16px;
+    color: var(--bella-primary);
+}
+
+.ea-row__time span {
+    font-size: 12px;
+    color: var(--bella-on-surface-variant);
+}
+
+.ea-row__customer {
+    min-width: 160px;
+    flex: 1;
+}
+
+.ea-row__customer strong {
+    display: block;
+    font-size: 14px;
+}
+
+.ea-row__customer span {
+    font-size: 12px;
+    color: var(--bella-on-surface-variant);
+}
+
+.ea-row__service {
+    min-width: 160px;
+    flex: 1;
+}
+
+.ea-row__service strong {
+    display: block;
+    font-size: 14px;
+}
+
+.ea-row__service span {
+    font-size: 12px;
+    color: var(--bella-on-surface-variant);
+}
+
+.ea-row__actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-left: auto;
+}
+
+.ea-row__actions summary,
+.ea-row__actions .ea-action-link {
+    color: var(--bella-primary);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+}
+
+.ea-row__actions .ea-cancel-btn {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ea-notiz-form {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.ea-notiz-form textarea {
+    width: 100%;
+    border: 1px solid var(--bella-outline-variant, #dfbec8);
+    border-radius: 8px;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.ea-notiz-form button {
+    margin-top: 8px;
+    background: linear-gradient(135deg, var(--bella-primary), var(--bella-primary-dark));
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ea-empty {
+    padding: 30px;
+    text-align: center;
+    color: var(--bella-on-surface-variant);
+}

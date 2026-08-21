@@ -1,0 +1,112 @@
+.profile-header {
+    background: linear-gradient(135deg, #d63384, #a8296b);
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    color: white;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    box-shadow: 0 8px 24px rgba(168, 41, 107, 0.25);
+}
+
+.profile-header .profile-photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.profile-header .profile-photo--placeholder {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    border: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.profile-header h1 {
+    margin: 0 0 4px 0;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-header p {
+    margin: 2px 0;
+    opacity: 0.95;
+}
+
+.profile-badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.profile-section {
+    background: white;
+    border-radius: 16px;
+    padding: 26px;
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.06);
+    border: 1px solid rgba(223, 190, 200, 0.25);
+    border-top: 3px solid #d63384;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.profile-section:hover {
+    box-shadow: 0 8px 28px rgba(43, 33, 56, 0.1);
+    transform: translateY(-2px);
+}
+
+.profile-section h2 {
+    margin: 0 0 18px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #a8296b;
+    border-bottom: 1px solid #f1ecf5;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f7f4f8;
+    font-size: 14px;
+}
+
+.profile-info-row:last-of-type {
+    border-bottom: none;
+}
+
+.profile-info-row span:first-child {
+    color: #7a6f78;
+}
+
+.profile-info-row span:last-child {
+    font-weight: 600;
+    color: #2b2138;
+}

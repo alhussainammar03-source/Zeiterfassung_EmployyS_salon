@@ -1,0 +1,886 @@
+/* =========================================
+   Bella Beauty – Admin Terminverwaltung
+   (Farben korrigiert auf Projekt-Palette)
+========================================= */
+
+:root {
+    --primary: #d63384;
+    --primary-dark: #b32a6d;
+    --primary-light: #fff0f6;
+
+    --secondary: #666666;
+    --background: #fafafa;
+    --surface: #ffffff;
+
+    --text: #222222;
+    --text-muted: #666666;
+
+    --border: #eeeeee;
+
+    --success: #1f7a4d;
+    --success-background: #e6f9ee;
+
+    --warning: #b8860b;
+    --warning-background: #fff4dd;
+
+    --info: #5a6472;
+    --info-background: #eef0f2;
+
+    --danger: #b3261e;
+    --danger-background: #fdecea;
+
+    --shadow-small: 0 4px 14px rgba(34, 34, 34, 0.08);
+    --shadow-medium: 0 12px 32px rgba(34, 34, 34, 0.12);
+
+    --radius-small: 8px;
+    --radius-medium: 14px;
+    --radius-large: 20px;
+}
+
+/* =========================================
+   Grundeinstellungen
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: var(--text);
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(214, 51, 132, 0.1),
+            transparent 30%
+        ),
+        var(--background);
+}
+
+a {
+    color: inherit;
+}
+
+/* =========================================
+   Hauptbereich
+========================================= */
+
+.admin-container {
+    width: min(1500px, calc(100% - 40px));
+    /* margin: 40px auto; */
+}
+
+/* =========================================
+   Seitenkopf
+========================================= */
+
+.page-header {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-bottom: 28px;
+    padding: 30px 34px;
+
+    color: white;
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-medium);
+}
+
+.page-header::after {
+    content: "";
+    position: absolute;
+    top: -70px;
+    right: -50px;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.page-header::before {
+    content: "";
+    position: absolute;
+    bottom: -90px;
+    right: 120px;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.page-header > div {
+    position: relative;
+    z-index: 1;
+}
+
+.page-header h1 {
+    margin: 0 0 10px;
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    line-height: 1.2;
+}
+
+.page-header a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 14px;
+
+    color: white;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.page-header a::before {
+    content: "←";
+}
+
+.page-header a:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateX(-3px);
+}
+
+/* =========================================
+   Meldungen
+========================================= */
+
+.message {
+    margin-bottom: 22px;
+    padding: 15px 18px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    border: 1px solid transparent;
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-small);
+}
+
+.message.success {
+    color: var(--success);
+    background: var(--success-background);
+    border-color: rgba(31, 122, 77, 0.2);
+}
+
+.message.error {
+    color: var(--danger);
+    background: var(--danger-background);
+    border-color: rgba(179, 38, 30, 0.2);
+}
+
+/* =========================================
+   Such- und Filterbereich
+========================================= */
+
+.search-form {
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) 220px auto auto;
+    align-items: center;
+    gap: 14px;
+
+    margin-bottom: 24px;
+    padding: 20px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-small);
+}
+
+.search-form input,
+.search-form select {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 15px;
+
+    color: var(--text);
+    font: inherit;
+
+    outline: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+    background: #fff;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.search-form input[type="search"] {
+    padding-left: 44px;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='9' cy='9' r='6'/%3E%3Cpath d='m14 14 5 5'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+    background-position: 15px center;
+}
+
+.search-form input::placeholder {
+    color: #a5a5a5;
+}
+
+.search-form input:focus,
+.search-form select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(214, 51, 132, 0.13);
+}
+
+.search-form button {
+    min-height: 48px;
+    padding: 0 24px;
+
+    color: white;
+    font: inherit;
+    font-weight: 700;
+
+    cursor: pointer;
+    border: none;
+    border-radius: var(--radius-small);
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    box-shadow: 0 7px 18px rgba(214, 51, 132, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.search-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(214, 51, 132, 0.34);
+}
+
+.search-form > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+    padding: 0 18px;
+
+    color: var(--secondary);
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+    background: #fff;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.search-form > a:hover {
+    color: var(--primary-dark);
+    background: var(--primary-light);
+    border-color: var(--primary);
+}
+
+/* =========================================
+   Tabelle
+========================================= */
+
+.table-wrapper {
+    overflow-x: auto;
+width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-medium);
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+    table-layout: fixed;
+}
+
+/* Feste Spaltenbreiten (Summe = 100%), damit auf dem Desktop
+   alle 12 Spalten gleichzeitig sichtbar sind. */
+th:nth-child(1),  td:nth-child(1)  { width: 3.5%; }  /* ID */
+th:nth-child(2),  td:nth-child(2)  { width: 9%; }    /* Kunde */
+th:nth-child(3),  td:nth-child(3)  { width: 9%; }    /* Mitarbeiter */
+th:nth-child(4),  td:nth-child(4)  { width: 14%; }   /* Kunden E-Mail */
+th:nth-child(5),  td:nth-child(5)  { width: 9%; }    /* Kunden Telefon */
+th:nth-child(6),  td:nth-child(6)  { width: 10%; }   /* Dienstleistung */
+th:nth-child(7),  td:nth-child(7)  { width: 8%; }    /* Datum */
+th:nth-child(8),  td:nth-child(8)  { width: 5%; }    /* Von */
+th:nth-child(9),  td:nth-child(9)  { width: 5%; }    /* Bis */
+th:nth-child(10), td:nth-child(10) { width: 9%; }    /* Status */
+th:nth-child(11), td:nth-child(11) { width: 12%; }   /* Notiz */
+th:nth-child(12), td:nth-child(12) { width: 6.5%; }  /* Aktionen */
+
+thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    padding: 15px;
+
+    color: var(--primary-dark);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+
+    background: var(--primary-light);
+    border-bottom: 2px solid #f6c6dc;
+}
+
+thead th:first-child {
+    padding-left: 22px;
+}
+
+tbody td {
+    padding: 14px 15px;
+
+    color: var(--text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    vertical-align: middle;
+
+    border-bottom: 1px solid var(--border);
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+tbody td:first-child {
+    padding-left: 22px;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr {
+    transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+    background: #fcf7f8;
+}
+
+tbody tr:hover td:first-child {
+    color: var(--primary-dark);
+}
+
+/* Kunde und Mitarbeiter hervorheben */
+
+tbody td:nth-child(2),
+tbody td:nth-child(3) {
+    font-weight: 700;
+}
+
+/* E-Mail */
+
+tbody td:nth-child(4) {
+    color: var(--primary-dark);
+}
+
+/* ID / Telefon / Datum / Uhrzeit kompakt, in einer Zeile */
+
+tbody td:nth-child(1),
+tbody td:nth-child(5),
+tbody td:nth-child(7),
+tbody td:nth-child(8),
+tbody td:nth-child(9) {
+    white-space: nowrap;
+}
+
+tbody td:nth-child(7),
+tbody td:nth-child(8),
+tbody td:nth-child(9) {
+    font-weight: 600;
+}
+
+/* Notiz */
+
+tbody td:nth-child(11) {
+    color: var(--text-muted);
+}
+
+/* =========================================
+   Status-Badges
+========================================= */
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 5px 10px;
+
+    font-size: 0.73rem;
+    font-weight: 800;
+    text-transform: capitalize;
+    white-space: nowrap;
+
+    border-radius: 999px;
+}
+
+.status::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.status.angefragt {
+    color: var(--warning);
+    background: var(--warning-background);
+}
+
+.status.bestaetigt {
+    color: var(--primary-dark);
+    background: var(--primary-light);
+}
+
+.status.abgeschlossen {
+    color: var(--info);
+    background: var(--info-background);
+}
+
+/* Optional, falls später storniert verwendet wird */
+
+.status.storniert,
+.status.abgelehnt {
+    color: var(--danger);
+    background: var(--danger-background);
+}
+
+/* =========================================
+   Details-Button
+========================================= */
+
+tbody td:last-child a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    min-height: 34px;
+    padding: 0 12px;
+
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+
+    border-radius: var(--radius-small);
+    background: var(--primary);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+tbody td:last-child a::before {
+    content: "⌕";
+    font-size: 1rem;
+}
+
+tbody td:last-child a:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(214, 51, 132, 0.25);
+}
+
+/* =========================================
+   Keine Daten
+========================================= */
+
+tbody td[colspan] {
+    padding: 55px 20px;
+
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    word-break: normal;
+}
+
+/* =========================================
+   Scrollbar
+========================================= */
+
+.table-wrapper::-webkit-scrollbar {
+    height: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: var(--primary-light);
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #e2a0b8;
+    border: 2px solid var(--primary-light);
+    border-radius: 999px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* =========================================
+   Detailkarte (Terminwunsch-Details)
+========================================= */
+
+.details-card {
+    margin-bottom: 24px;
+    padding: 6px 34px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-medium);
+}
+
+.details-card p {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+
+    margin: 0;
+    padding: 16px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.details-card p:last-child {
+    border-bottom: none;
+}
+
+.details-card p strong {
+    flex: 0 0 170px;
+
+    color: var(--text-muted);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.details-card p {
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ID dezent */
+.details-card p:nth-of-type(1) {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Kunde / Mitarbeiter hervorheben */
+.details-card p:nth-of-type(2),
+.details-card p:nth-of-type(4) {
+    font-weight: 700;
+}
+
+/* E-Mail in Markenfarbe, wie in der Tabelle */
+.details-card p:nth-of-type(3) {
+    color: var(--primary-dark);
+}
+
+/* Status betont */
+.details-card p:nth-of-type(8) {
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+/* Kundennotiz als eigener Hinweis-Block, Label über dem Text */
+.details-card p:nth-of-type(9) {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 18px 20px;
+    margin: 6px 0;
+
+    background: var(--primary-light);
+    border-bottom: none;
+    border-radius: var(--radius-medium);
+}
+
+.details-card p:nth-of-type(9) strong {
+    flex: none;
+    color: var(--primary-dark);
+}
+
+/* Erstellt-am ganz unten, klein und ruhig */
+.details-card p:last-of-type {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* =========================================
+   Status ändern
+========================================= */
+
+.status-form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    padding: 22px 26px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-small);
+}
+
+.status-form label {
+    color: var(--text);
+    font-size: 0.92rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status-form select {
+    min-height: 48px;
+    min-width: 220px;
+    padding: 0 15px;
+
+    color: var(--text);
+    font: inherit;
+
+    outline: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+    background: #fff;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.status-form select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(214, 51, 132, 0.13);
+}
+
+.status-form button {
+    min-height: 48px;
+    padding: 0 26px;
+    margin-left: auto;
+
+    color: white;
+    font: inherit;
+    font-weight: 700;
+
+    cursor: pointer;
+    border: none;
+    border-radius: var(--radius-small);
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    box-shadow: 0 7px 18px rgba(214, 51, 132, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.status-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(214, 51, 132, 0.34);
+}
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media (max-width: 1000px) {
+    .admin-container {
+        width: min(100% - 24px, 1500px);
+        margin-top: 24px;
+    }
+
+    .search-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .search-form input {
+        grid-column: 1 / -1;
+    }
+
+    .search-form button,
+    .search-form > a {
+        width: 100%;
+    }
+
+    /* Bei so wenig Platz lieber horizontal scrollen als
+       feste Spalten unleserlich eng quetschen. */
+    table {
+        table-layout: auto;
+        min-width: 1300px;
+    }
+
+    th, td {
+        width: auto !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .admin-container {
+        width: min(100% - 16px, 1500px);
+        margin-top: 16px;
+    }
+
+    .page-header {
+        padding: 24px 20px;
+        border-radius: var(--radius-medium);
+    }
+
+    .page-header h1 {
+        font-size: 1.65rem;
+    }
+
+    .search-form {
+        grid-template-columns: 1fr;
+        padding: 15px;
+        border-radius: var(--radius-medium);
+    }
+
+    .search-form input {
+        grid-column: auto;
+    }
+
+    .table-wrapper {
+        border-radius: var(--radius-medium);
+    }
+
+    .details-card {
+        padding: 4px 20px;
+        border-radius: var(--radius-medium);
+    }
+
+    .details-card p {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .details-card p strong {
+        flex: none;
+    }
+
+    .status-form {
+        flex-direction: column;
+        align-items: stretch;
+        border-radius: var(--radius-medium);
+    }
+
+    .status-form select {
+        min-width: 0;
+    }
+
+    .status-form button {
+        margin-left: 0;
+        width: 100%;
+    }
+
+
+
+.status-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.status-actions form {
+    margin: 0;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: #198754;
+}
+
+.btn-success:hover {
+    background: #146c43;
+}
+
+.btn-danger {
+    background: #dc3545;
+}
+
+.btn-danger:hover {
+    background: #b02a37;
+}
+
+
+}

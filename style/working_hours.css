@@ -1,0 +1,117 @@
+/* ==========================================================================
+   Bella Beauty – Zeiterfassung
+   ========================================================================== */
+
+.wh-clock-card {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.06);
+    padding: 40px var(--space-lg, 24px);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.wh-clock-card__status {
+    display: inline-block;
+    background: var(--bella-primary-light, #fce7f3);
+    color: var(--bella-primary-dark, #a8296b);
+    padding: 5px 16px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.wh-clock-card__status--active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.wh-clock-card__time {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--bella-on-surface, #151c27);
+    margin-bottom: 4px;
+}
+
+.wh-clock-card__date {
+    color: var(--bella-on-surface-variant);
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+.wh-clock-btn {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, var(--bella-primary, #d63384), var(--bella-primary-dark, #a8296b));
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(214, 51, 132, 0.35);
+    transition: transform 0.15s ease;
+}
+
+.wh-clock-btn:hover {
+    transform: scale(1.04);
+}
+
+.wh-clock-btn--stop {
+    background: linear-gradient(135deg, #6b7280, #374151);
+    box-shadow: 0 8px 24px rgba(55, 65, 81, 0.3);
+}
+
+.wh-clock-btn__icon {
+    font-size: 26px;
+}
+
+.wh-overview-title {
+    margin: 0 0 16px 0;
+    font-size: 18px;
+}
+
+.wh-table-wrapper {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.wh-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wh-table th {
+    text-align: left;
+    padding: 14px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--bella-on-surface-variant);
+    background: var(--bella-surface-container-low, #f0f3ff);
+}
+
+.wh-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f1ecf5;
+    font-size: 14px;
+}
+
+.wh-table tr:last-child td {
+    border-bottom: none;
+}
+
+.wh-table td:first-child {
+    font-weight: 600;
+    color: var(--bella-primary);
+}

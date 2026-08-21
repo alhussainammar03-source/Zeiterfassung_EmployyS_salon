@@ -1,0 +1,14 @@
+# Umgebungsvariablen - enthält Geheimnisse, niemals committen!
+.env
+
+# Composer
+/vendor/
+
+# Logs
+cron/*.log
+
+# Editor/OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

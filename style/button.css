@@ -1,0 +1,59 @@
+.form-actions button,
+.form-actions a {
+    min-height: 46px;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.form-actions button {
+    color: #ffffff;
+    background: linear-gradient(
+        135deg,
+        var(--bella-primary),
+        #e65099
+    );
+    border: none;
+    box-shadow: 0 8px 20px rgba(214, 51, 132, 0.24);
+}
+
+.form-actions button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(214, 51, 132, 0.32);
+}
+
+.form-actions button:active {
+    transform: translateY(0);
+}
+
+.form-actions a {
+    color: var(--bella-primary-dark);
+    background: var(--bella-primary-light);
+    border: 1px solid #f1c5dc;
+}
+
+.form-actions a:hover {
+    background: #f8d9e9;
+    transform: translateY(-2px);
+}
+
+
+/* Responsive */
+
+@media (max-width: 650px) {
+  
+
+   
+    .form-actions button,
+    .form-actions a {
+        width: 100%;
+    }
+}

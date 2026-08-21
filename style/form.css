@@ -1,0 +1,220 @@
+/* =========================================
+   Bella Beauty – Mitarbeiter hinzufügen
+   ========================================= */
+
+:root {
+    --bella-primary: #d63384;
+    --bella-primary-dark: #b5256d;
+    --bella-primary-light: #fce7f3;
+    --bella-background: #fff7fb;
+    --bella-card: #ffffff;
+    --bella-text: #2f2430;
+    --bella-muted: #756b73;
+    --bella-border: #eadde5;
+    --bella-error: #b42318;
+    --bella-error-background: #fff1f0;
+    --bella-success: #157347;
+    --bella-shadow: 0 12px 35px rgba(112, 50, 85, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(214, 51, 132, 0.12),
+            transparent 35%
+        ),
+        var(--bella-background);
+    color: var(--bella-text);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+/* Hauptbereich */
+
+.admin-container {
+    width: min(100% - 32px, 820px);
+    margin: 55px auto;
+}
+
+.form-container {
+    position: relative;
+    padding: 40px;
+    background: var(--bella-card);
+    border: 1px solid var(--bella-border);
+    border-radius: 24px;
+    box-shadow: var(--bella-shadow);
+    overflow: hidden;
+}
+
+/* Dekorative Linie oben */
+
+.form-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(
+        90deg,
+        var(--bella-primary),
+        #ef70ae
+    );
+}
+
+/* Überschrift */
+
+.form-header {
+    margin-bottom: 30px;
+}
+
+.form-header h1,
+.form-container > h1 {
+    margin: 0 0 10px;
+    color: var(--bella-primary-dark);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.2;
+}
+
+.form-description {
+    margin: 0;
+    color: var(--bella-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Fehlermeldung */
+
+.message {
+    margin-bottom: 24px;
+    padding: 15px 18px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.message.error {
+    color: var(--bella-error);
+    background: var(--bella-error-background);
+    border: 1px solid #f3b9b4;
+}
+
+/* Formular */
+
+.admin-form {
+    display: grid;
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.admin-form label {
+    color: var(--bella-text);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.required {
+    color: var(--bella-primary);
+}
+
+.admin-form input,
+.admin-form select {
+    width: 100%;
+    min-height: 50px;
+    padding: 12px 15px;
+    color: var(--bella-text);
+    background: #ffffff;
+    border: 1px solid var(--bella-border);
+    border-radius: 12px;
+    outline: none;
+    font: inherit;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.admin-form input::placeholder {
+    color: #aaa0a7;
+}
+
+.admin-form input:hover,
+.admin-form select:hover {
+    border-color: #d8b5ca;
+}
+
+.admin-form input:focus,
+.admin-form select:focus {
+    border-color: var(--bella-primary);
+    box-shadow: 0 0 0 4px rgba(214, 51, 132, 0.13);
+}
+
+.admin-form select {
+    cursor: pointer;
+}
+
+/* Zweispaltiger Bereich */
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Hinweis unter einem Feld */
+
+.field-hint {
+    margin: 0;
+    color: var(--bella-muted);
+    font-size: 0.82rem;
+}
+
+/* Buttons */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-top: 12px;
+    padding-top: 24px;
+    border-top: 1px solid var(--bella-border);
+}
+
+
+/* Responsive */
+
+@media (max-width: 650px) {
+    .admin-container {
+        width: min(100% - 20px, 820px);
+        margin: 30px auto;
+    }
+
+    .form-container {
+        padding: 30px 20px;
+        border-radius: 18px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+   
+}

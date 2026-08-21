@@ -1,0 +1,290 @@
+/* ==========================================================================
+   Bella Beauty – Termin buchen
+   Nutzt die Design-Tokens aus home_page.css
+   ========================================================================== */
+
+.booking-page {
+    margin-top: 80px;
+    padding: 32px var(--space-mobile) 60px;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.booking-hero h1 {
+    color: var(--bella-primary);
+    font-size: 28px;
+    margin: 0 0 6px 0;
+}
+
+.booking-hero p {
+    color: var(--bella-on-surface-variant);
+    max-width: 640px;
+    margin: 0 0 30px 0;
+}
+
+/* --- Signature Services --- */
+
+.booking-services__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.booking-services__header h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.category-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.category-pill {
+    border: 1px solid var(--bella-outline-variant, #dfbec8);
+    background: white;
+    color: var(--bella-on-surface-variant);
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.category-pill:hover {
+    background: var(--bella-primary-light);
+}
+
+.category-pill.is-active {
+    background: linear-gradient(135deg, var(--bella-primary), var(--bella-primary-dark));
+    color: white;
+    border-color: transparent;
+}
+
+.signature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: 40px;
+}
+
+.signature-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.06);
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.signature-card:hover {
+    transform: translateY(-3px);
+}
+
+.signature-card__image {
+    width: 100%;
+    height: 140px;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--bella-primary-light);
+}
+
+.signature-card__image--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+}
+
+.signature-card__body {
+    padding: 14px;
+}
+
+.signature-card__body h3 {
+    font-size: 15px;
+    margin: 0 0 4px 0;
+    color: var(--bella-primary);
+}
+
+.signature-card__body span {
+    font-size: 13px;
+    color: var(--bella-on-surface-variant);
+}
+
+/* --- Booking layout: form left, slots right --- */
+
+.booking-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+}
+
+.booking-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.06);
+}
+
+.booking-card h2 {
+    font-size: 17px;
+    color: var(--bella-primary);
+    margin: 0 0 16px 0;
+}
+
+.booking-field {
+    margin-bottom: 16px;
+}
+
+.booking-field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--bella-on-surface-variant);
+    margin-bottom: 6px;
+}
+
+.booking-field select,
+.booking-field input,
+.booking-field textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--bella-outline-variant, #dfbec8);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.booking-field select:focus,
+.booking-field input:focus,
+.booking-field textarea:focus {
+    outline: none;
+    border-color: var(--bella-primary);
+    box-shadow: 0 0 0 3px rgba(214, 51, 132, 0.12);
+}
+
+.booking-submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--bella-primary), var(--bella-primary-dark));
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: var(--radius-full);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* --- Time slots panel --- */
+
+.slots-legend {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--bella-on-surface-variant);
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.slots-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.slots-legend i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.slots-day-block {
+    margin-bottom: 20px;
+}
+
+.slots-day-block__title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--bella-on-surface-variant);
+    margin: 0 0 10px 0;
+}
+
+.slot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+}
+
+.slot-chip {
+    position: relative;
+}
+
+.slot-chip input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+
+.slot-chip label {
+    display: block;
+    text-align: center;
+    padding: 10px 4px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.slot-chip__status {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-top: 2px;
+}
+
+.slot-chip--frei label {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.slot-chip--in_bearbeitung label {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.slot-chip--ausgebucht label {
+    background: #fee2e2;
+    color: #991b1b;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.slot-chip input:checked + label {
+    outline: 2px solid var(--bella-primary);
+    outline-offset: 2px;
+}
+
+.booking-empty {
+    color: var(--bella-on-surface-variant);
+    font-size: 14px;
+}
+
+@media (min-width: 900px) {
+    .booking-layout {
+        grid-template-columns: 380px 1fr;
+    }
+}

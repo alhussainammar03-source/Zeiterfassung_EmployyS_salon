@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Bella Beauty – Login-Seite
+   Ergänzt style/register.css (nutzt dessen .auth-card/.input-box Klassen)
+   ========================================================================== */
+
+.auth-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.auth-label-row label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--bella-on-surface-variant);
+}
+
+.auth-label-row a {
+    font-size: 13px;
+    color: var(--bella-primary);
+    font-weight: 600;
+}
+
+.auth-remember-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--bella-on-surface-variant);
+    margin-bottom: 20px;
+}

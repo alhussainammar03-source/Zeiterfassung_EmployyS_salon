@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Bella Beauty – Admin-Dashboard
+   ========================================================================== */
+
+.adash-header {
+    margin-bottom: 24px;
+}
+
+.adash-header h1 {
+    margin: 0 0 4px 0;
+    font-size: 24px;
+}
+
+.adash-header p {
+    margin: 0;
+    color: var(--bella-on-surface-variant);
+}
+
+.adash-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+@media (min-width: 700px) {
+    .adash-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1100px) {
+    .adash-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.adash-card {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    padding: 20px;
+    text-decoration: none;
+    color: var(--bella-on-surface, #151c27);
+    display: block;
+    position: relative;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.adash-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(43, 33, 56, 0.1);
+}
+
+.adash-card__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.adash-card__icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--bella-primary-light, #fce7f3);
+    color: var(--bella-primary, #d63384);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.adash-card__arrow {
+    color: var(--bella-on-surface-variant);
+    font-size: 16px;
+}
+
+.adash-card h2 {
+    font-size: 15px;
+    margin: 0 0 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.adash-card p {
+    font-size: 12px;
+    color: var(--bella-on-surface-variant);
+    margin: 0;
+}
+
+.adash-card__badge {
+    background: #ef4444;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+}
+
+.adash-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.adash-stat-card {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    padding: 18px;
+}
+
+.adash-stat-card__value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--bella-primary);
+}
+
+.adash-stat-card__label {
+    font-size: 12px;
+    color: var(--bella-on-surface-variant);
+    margin-top: 2px;
+}

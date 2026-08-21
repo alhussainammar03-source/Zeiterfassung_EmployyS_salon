@@ -1,0 +1,211 @@
+/* ==========================================================================
+   Bella Beauty – Terminwünsche (Admin)
+   ========================================================================== */
+
+.tw-filter-card {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.tw-filter-card input[type="search"] {
+    flex: 1;
+    min-width: 220px;
+    padding: 9px 14px;
+    border: 1px solid var(--bella-outline-variant, #dfbec8);
+    border-radius: 999px;
+    font-size: 14px;
+}
+
+.tw-filter-card input[type="date"] {
+    width: auto;
+    padding: 8px 12px;
+    border: 1px solid var(--bella-outline-variant, #dfbec8);
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.tw-filter-card select {
+    width: auto;
+    flex-shrink: 0;
+    padding: 9px 14px;
+    border: 1px solid var(--bella-outline-variant, #dfbec8);
+    border-radius: 999px;
+    font-size: 13px;
+    background: white;
+}
+
+.tw-filter-card button {
+    width: auto;
+    background: linear-gradient(135deg, var(--bella-primary, #d63384), var(--bella-primary-dark, #a8296b));
+    color: white;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.tw-filter-card a {
+    font-size: 13px;
+    color: var(--bella-on-surface-variant);
+}
+
+.tw-new-btn {
+    background: linear-gradient(135deg, var(--bella-primary, #d63384), var(--bella-primary-dark, #a8296b));
+    color: white;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.tw-table-wrapper {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.tw-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tw-table th {
+    text-align: left;
+    padding: 12px 18px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--bella-on-surface-variant);
+    background: var(--bella-surface-container-low, #f0f3ff);
+    white-space: nowrap;
+}
+
+.tw-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #f1ecf5;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.tw-table tr:last-child td {
+    border-bottom: none;
+}
+
+.tw-id {
+    color: var(--bella-on-surface-variant);
+    font-size: 12px;
+}
+
+.tw-person-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tw-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+}
+
+.tw-name {
+    font-weight: 600;
+}
+
+.tw-contact__email {
+    color: var(--bella-primary);
+    font-size: 12px;
+    display: block;
+}
+
+.tw-contact__phone {
+    font-size: 11px;
+    color: var(--bella-on-surface-variant);
+}
+
+.tw-service {
+    font-weight: 600;
+}
+
+.tw-service__duration {
+    display: block;
+    font-size: 11px;
+    color: var(--bella-on-surface-variant);
+    font-weight: 400;
+}
+
+.tw-time__date {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.tw-time__range {
+    font-size: 11px;
+    color: var(--bella-on-surface-variant);
+}
+
+.tw-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.tw-status::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.tw-status--angefragt {
+    background: var(--bella-primary-light, #fce7f3);
+    color: var(--bella-primary-dark, #a8296b);
+}
+
+.tw-status--bestaetigt {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.tw-status--abgelehnt,
+.tw-status--storniert {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.tw-status--abgeschlossen {
+    background: #f1f1f4;
+    color: #6b7280;
+}
+
+.tw-details-link {
+    color: var(--bella-primary);
+    font-weight: 600;
+    font-size: 12px;
+    text-decoration: none;
+}

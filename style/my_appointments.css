@@ -1,0 +1,401 @@
+/* ==========================================================================
+   Bella Beauty – Meine Termine (Bento-Grid-Design)
+   Nutzt die Design-Tokens aus home_page.css
+   ========================================================================== */
+
+.appt-success-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+    border: 1px solid #bbf7d0;
+    margin-bottom: var(--space-xl);
+}
+
+.appt-success-banner__left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.appt-success-banner__icon {
+    background: #166534;
+    color: white;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.appt-success-banner__text {
+    color: #166534;
+    font-weight: 700;
+}
+
+.appt-success-banner__close {
+    background: none;
+    border: none;
+    color: #166534;
+    opacity: 0.7;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* --- Tabs --- */
+
+.appt-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: var(--space-lg);
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.appt-tab {
+    background: var(--bella-surface-container-low, #f0f3ff);
+    color: var(--bella-on-surface-variant);
+    border: none;
+    padding: 10px 24px;
+    border-radius: var(--radius-full);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s ease;
+}
+
+.appt-tab:hover {
+    background: var(--bella-primary-light);
+}
+
+.appt-tab.is-active {
+    background: linear-gradient(135deg, var(--bella-primary), var(--bella-primary-dark));
+    color: white;
+}
+
+/* --- Bento grid --- */
+
+.appt-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+
+.appt-grid__main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.appt-grid__side {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+@media (min-width: 900px) {
+    .appt-grid {
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+    }
+}
+
+/* --- Appointment card --- */
+
+.appt-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    border: 1px solid rgba(223, 190, 200, 0.25);
+    padding: var(--space-lg);
+    display: flex;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.appt-card__image {
+    width: 100%;
+    max-width: 190px;
+    height: 190px;
+    border-radius: var(--radius-lg);
+    background-size: cover;
+    background-position: center;
+    background-color: var(--bella-primary-light);
+    flex-shrink: 0;
+}
+
+.appt-card__image--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.appt-card__body {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.appt-card__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.appt-card__tag {
+    background: var(--bella-primary-light);
+    color: var(--bella-primary);
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.appt-card__duration {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--bella-on-surface-variant);
+    font-size: 12px;
+}
+
+.appt-card__body h3 {
+    margin: 10px 0 2px 0;
+    font-size: 20px;
+}
+
+.appt-card__stylist {
+    color: var(--bella-on-surface-variant);
+    font-size: 14px;
+    margin: 0;
+}
+
+.appt-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.appt-card__meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.appt-card__actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.appt-card__actions .btn-primary,
+.appt-card__actions .btn-outline {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.appt-card--dimmed {
+    opacity: 0.65;
+    filter: grayscale(0.6);
+}
+
+/* --- Side cards --- */
+
+.appt-next-card {
+    background: linear-gradient(135deg, var(--bella-primary), var(--bella-primary-dark));
+    color: white;
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.appt-next-card h4 {
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.85;
+}
+
+.appt-next-card__day {
+    font-size: 16px;
+    margin: 0;
+}
+
+.appt-next-card__time {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 2px 0 12px 0;
+}
+
+.appt-next-card p.appt-next-card__note {
+    font-size: 13px;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.appt-side-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    border: 1px solid rgba(223, 190, 200, 0.25);
+    padding: var(--space-lg);
+}
+
+.appt-side-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1ecf5;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--bella-on-surface-variant);
+}
+
+.appt-side-card__badge {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.appt-side-card__row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0.65;
+}
+
+.appt-side-card__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: var(--bella-surface-container-low, #f0f3ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.appt-side-card__row p {
+    margin: 0;
+}
+
+.appt-side-card__row p:first-child {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.appt-side-card__row p:last-child {
+    font-size: 12px;
+    color: var(--bella-on-surface-variant);
+}
+
+.appt-side-card__btn {
+    width: 100%;
+    margin-top: 14px;
+    background: var(--bella-surface-container-low, #f0f3ff);
+    color: var(--bella-on-surface-variant);
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.appt-side-card__btn:hover {
+    background: var(--bella-primary-light);
+    color: var(--bella-primary);
+}
+
+.appt-empty {
+    color: var(--bella-on-surface-variant);
+    font-size: 14px;
+    padding: 20px 0;
+}
+
+/* --- Cancel confirmation modal (reused) --- */
+
+.appt-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(21, 28, 39, 0.4);
+    backdrop-filter: blur(3px);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+}
+
+.appt-modal-overlay.is-open {
+    display: flex;
+}
+
+.appt-modal {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    max-width: 420px;
+    width: 90%;
+    padding: var(--space-xl);
+}
+
+.appt-modal h3 {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+}
+
+.appt-modal p {
+    color: var(--bella-on-surface-variant);
+    font-size: 14px;
+    margin: 0 0 24px 0;
+}
+
+.appt-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.appt-modal-cancel {
+    background: none;
+    border: none;
+    color: var(--bella-on-surface-variant);
+    padding: 10px 18px;
+    border-radius: var(--radius-full);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.appt-modal-confirm {
+    background: linear-gradient(135deg, var(--bella-primary), var(--bella-primary-dark));
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--radius-full);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}

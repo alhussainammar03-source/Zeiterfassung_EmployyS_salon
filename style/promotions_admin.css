@@ -1,0 +1,163 @@
+/* ==========================================================================
+   Bella Beauty – Rabatt-Aktionen verwalten (Admin)
+   ========================================================================== */
+
+.promo-new-btn {
+    background: linear-gradient(135deg, var(--bella-primary, #d63384), var(--bella-primary-dark, #a8296b));
+    color: white;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.promo-card {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    padding: 20px;
+    border-left: 3px solid var(--bella-primary, #d63384);
+}
+
+.promo-card--inaktiv {
+    border-left-color: #d1d5db;
+    opacity: 0.7;
+}
+
+.promo-card__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.promo-card__icon {
+    font-size: 26px;
+}
+
+.promo-card__status {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 999px;
+}
+
+.promo-card__status--aktiv {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.promo-card__status--inaktiv {
+    background: var(--bella-surface-container-low, #f0f3ff);
+    color: var(--bella-on-surface-variant);
+}
+
+.promo-card h3 {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+}
+
+.promo-card p {
+    font-size: 13px;
+    color: var(--bella-on-surface-variant);
+    margin: 0 0 12px 0;
+}
+
+.promo-card__valid {
+    font-size: 11px;
+    color: var(--bella-primary);
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.promo-card__actions {
+    display: flex;
+    gap: 6px;
+}
+
+.promo-icon-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: var(--bella-surface-container-low, #f0f3ff);
+    color: var(--bella-on-surface-variant);
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.promo-icon-btn--delete:hover {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.promo-icon-btn--edit:hover {
+    background: var(--bella-primary-light, #fce7f3);
+    color: var(--bella-primary);
+}
+
+/* Modal (shared pattern) */
+
+.promo-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(21, 28, 39, 0.4);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.promo-modal-overlay.is-open {
+    display: flex;
+}
+
+.promo-modal {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    padding: 24px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.promo-modal h3 {
+    margin: 0 0 16px 0;
+}
+
+.promo-modal label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--bella-on-surface-variant);
+    margin-bottom: 5px;
+}
+
+.promo-modal input,
+.promo-modal select,
+.promo-modal textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid var(--bella-outline-variant, #dfbec8);
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 14px;
+    font-family: inherit;
+}
+
+.promo-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}

@@ -1,0 +1,190 @@
+/* ==========================================================================
+   Bella Beauty – Treuepunkte-Programm (Admin)
+   ========================================================================== */
+
+.loy-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.loy-stat-card {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    padding: 18px;
+}
+
+.loy-stat-card__value {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--bella-primary);
+}
+
+.loy-stat-card__label {
+    font-size: 12px;
+    color: var(--bella-on-surface-variant);
+    margin-top: 2px;
+}
+
+.loy-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: start;
+    margin-bottom: 24px;
+}
+
+@media (min-width: 900px) {
+    .loy-layout {
+        grid-template-columns: 340px 1fr;
+    }
+}
+
+.loy-settings-card {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    padding: 22px;
+}
+
+.loy-settings-card h2 {
+    margin: 0 0 16px 0;
+    font-size: 15px;
+}
+
+.loy-settings-card label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--bella-on-surface-variant);
+    margin-bottom: 5px;
+}
+
+.loy-settings-card input {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid var(--bella-outline-variant, #dfbec8);
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.loy-settings-card button {
+    width: 100%;
+    background: linear-gradient(135deg, var(--bella-primary, #d63384), var(--bella-primary-dark, #a8296b));
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.loy-table-card {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.05);
+    overflow: hidden;
+}
+
+.loy-table-card__header {
+    padding: 18px 20px;
+    border-bottom: 1px solid #f1ecf5;
+}
+
+.loy-table-card__header h2 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.loy-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.loy-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--bella-on-surface-variant);
+    background: var(--bella-surface-container-low, #f0f3ff);
+}
+
+.loy-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f1ecf5;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.loy-table tr:last-child td {
+    border-bottom: none;
+}
+
+.loy-person-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.loy-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+}
+
+.loy-code {
+    font-family: monospace;
+    background: var(--bella-surface-container-low, #f0f3ff);
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.loy-status {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.loy-status--offen {
+    background: var(--bella-primary-light, #fce7f3);
+    color: var(--bella-primary-dark, #a8296b);
+}
+
+.loy-status--eingeloest {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.loy-icon-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: var(--bella-surface-container-low, #f0f3ff);
+    color: var(--bella-on-surface-variant);
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.loy-icon-btn:hover {
+    background: #dcfce7;
+    color: #166534;
+}

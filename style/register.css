@@ -1,0 +1,181 @@
+/* ==========================================================================
+   Bella Beauty – Registrieren-Seite
+   Nutzt die Design-Tokens aus home_page.css
+   ========================================================================== */
+
+.auth-main {
+    margin-top: 80px;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px var(--space-mobile);
+    background: linear-gradient(135deg, #ffffff 0%, var(--bella-primary-light) 100%);
+}
+
+.auth-card {
+    background: white;
+    width: 100%;
+    max-width: 420px;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 4px 20px rgba(43, 33, 56, 0.08);
+    padding: var(--space-xl);
+    text-align: center;
+}
+
+.auth-card__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--bella-primary), var(--bella-primary-dark));
+    color: white;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px auto;
+}
+
+.auth-card h1 {
+    font-size: 22px;
+    margin: 0 0 4px 0;
+    color: var(--bella-on-surface);
+}
+
+.auth-card__subtitle {
+    color: var(--bella-on-surface-variant);
+    font-size: 14px;
+    margin: 0 0 24px 0;
+}
+
+.auth-form {
+    text-align: left;
+}
+
+.auth-form__row {
+    display: flex;
+    gap: 12px;
+}
+
+.auth-form__row .input-box {
+    flex: 1;
+}
+
+.input-box {
+    margin-bottom: 16px;
+}
+
+.input-box label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--bella-on-surface-variant);
+    margin-bottom: 4px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--bella-outline-variant, #dfbec8);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.input-box input:focus {
+    outline: none;
+    border-color: var(--bella-primary);
+    box-shadow: 0 0 0 3px rgba(214, 51, 132, 0.12);
+}
+
+.input-hint {
+    font-size: 12px;
+    color: var(--bella-on-surface-variant);
+    margin-top: 4px;
+}
+
+.auth-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--bella-on-surface-variant);
+    margin-bottom: 20px;
+}
+
+.auth-checkbox input {
+    margin-top: 3px;
+}
+
+.auth-checkbox a {
+    color: var(--bella-primary);
+}
+
+.auth-submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--bella-primary), var(--bella-primary-dark));
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.auth-submit-btn:hover {
+    transform: translateY(-1px);
+}
+
+.auth-message {
+    margin-top: 16px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.auth-message.success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.auth-message.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.auth-card__bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--bella-on-surface-variant);
+}
+
+.auth-card__bottom a {
+    color: var(--bella-primary);
+    font-weight: 600;
+}
+
+.auth-images {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.auth-images div {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 12px rgba(43, 33, 56, 0.1);
+    border: 3px solid white;
+}
+
+@media (max-width: 480px) {
+    .auth-form__row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
