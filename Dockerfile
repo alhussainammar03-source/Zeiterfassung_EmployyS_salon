@@ -1,6 +1,6 @@
-FROM php:8.4-apache
+FROM php:8.4-cli
 
-# System dependencies + PHP extensions
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
@@ -14,9 +14,6 @@ RUN apt-get update && apt-get install -y \
         zip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-
-# Enable Apache rewrite
-RUN a2enmod rewrite
 
 # Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
@@ -32,8 +29,7 @@ RUN composer install \
     --optimize-autoloader \
     --no-interaction
 
-# Permissions
-RUN chown -R www-data:www-data /var/www/html
+EXPOSE 8080
 
-# Railway provides PORT dynamically
-CMD ["sh", "-c", "sed -i \"s/Listen 80/Listen ${PORT:-8080}/\" /etc/apache2/ports.conf && sed -i \"s/:80>/:${PORT:-8080}>/\" /etc/apache2/sites-available/000-default.conf && apache2-foreground"]
+# Railway provides PORT
+CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-8080} -t /var/www/html"]
