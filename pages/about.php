@@ -3,8 +3,7 @@
 session_start();
 
 require_once __DIR__ . '/../config/Database.php';
-require_once __DIR__ . '/../repositories/employeeRepository.php';
-
+require_once __DIR__ . '/../repositories/EmployeeRepository.php';
 $isLoggedIn =
     isset($_SESSION['logged_in']) &&
     $_SESSION['logged_in'] === true;
