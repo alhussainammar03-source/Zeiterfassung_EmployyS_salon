@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../includes/Auth.php';
 require_once __DIR__ . '/../config/Database.php';
-require_once __DIR__ . '/../repositories/employeeRepository.php';
+require_once __DIR__ . '/../repositories/EmployeeRepository.php';
 require_once __DIR__ . '/../repositories/VacationRepository.php';
 require_once __DIR__ . '/../repositories/SickLeaveRepository.php';
 require_once __DIR__ . '/../repositories/TerminwunschRepository.php';
