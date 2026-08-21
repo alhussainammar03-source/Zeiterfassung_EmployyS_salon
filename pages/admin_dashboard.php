@@ -13,7 +13,7 @@ $databaseError = null;
 $offeneUrlaubsantraege = 0;
 $ungeleseneKrankmeldungen = 0;
 $offeneTerminwuensche = 0;
-
+//Sss
 try {
     $pdo = Database::getInstance()->getConnection();
 
